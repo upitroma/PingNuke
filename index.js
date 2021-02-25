@@ -22,7 +22,11 @@ bot.on("message", (message) => {
     
 
     if (message.content.startsWith(PREFIX)){
-        if(message.content=="!c"){
+        if(message.content=="!C"){
+            botChannel.send("this should ping chris")
+            botChannel.send("this should ping chris")
+            botChannel.send("this should ping chris")
+            botChannel.send("this should ping chris")
             botChannel.send("this should ping chris")
         }
     }
