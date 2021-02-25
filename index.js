@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const secrets = require("./token.json");
+const secrets = require("./secrets.json");
 const bot = new Discord.Client();
 bot.login(secrets.TOKEN);
 
