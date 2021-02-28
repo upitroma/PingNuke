@@ -9,13 +9,14 @@ const PREFIX = '!';
 var botChannel
 bot.once("ready", async () => {
     // Fetch the channel
+    botTestingChannel = await bot.channels.fetch("775031298371878942")
     botChannel = await bot.channels.fetch("765310968615796776")
     // Note that it's possible the channel couldn't be found
     if (!botChannel) {
       return console.log("could not find channel")
     }
   
-    botChannel.send("Hello world!")
+    botTestingChannel.send("Hello world!")
   })
 
 bot.on("message", (message) => {
