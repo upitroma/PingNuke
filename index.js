@@ -4,19 +4,23 @@ const bot = new Discord.Client();
 bot.login(secrets.TOKEN);
 
 
-const PREFIX = '!';
+console.log("starting bot...")
 
+const PREFIX = '!';
 var botChannel
 bot.once("ready", async () => {
     // Fetch the channel
     botTestingChannel = await bot.channels.fetch("775031298371878942")
-    botChannel = await bot.channels.fetch("765310968615796776")
-    // Note that it's possible the channel couldn't be found
-    if (!botChannel) {
-      return console.log("could not find channel")
+
+    try{
+        botChannel = await bot.channels.fetch("765310968615796776")
+    }
+    catch{
+        botChannel=botTestingChannel
     }
   
     botTestingChannel.send("Hello world!")
+    console.log("connected and ready")
   })
 
 bot.on("message", (message) => {
@@ -32,6 +36,25 @@ bot.on("message", (message) => {
             for(i=0;i<5;i++){
                 message.channel.send("<@"+secrets.userIds[1]+">")
             }
+        }
+        else if(message.content.startsWith("!poll")){
+
+            if(message.content.split('!poll')[1]==""){
+                message.channel.send("put what you want to poll after '!poll'. ex: '!poll is water wet?'")
+            }
+            else{
+                pollMsg = new Discord.MessageEmbed()
+                .setTitle("Vote!")
+                .setDescription(message.content.split('!poll')[1])
+
+            message.channel.send(pollMsg)
+                .then(sentEmbed => {
+                    sentEmbed.react("👍")
+                    sentEmbed.react("👎")
+                })
+            }
+
+            
         }
     }
 
