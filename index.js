@@ -9,6 +9,7 @@ console.log("starting bot...")
 const PREFIX = '!';
 var botChannel
 bot.once("ready", async () => {
+
     // Fetch the channel
     botTestingChannel = await bot.channels.fetch("775031298371878942")
 
@@ -25,8 +26,9 @@ bot.once("ready", async () => {
 
 bot.on("message", (message) => {
     
-
     if (message.content.startsWith(PREFIX)){
+
+        //ping spam
         if(message.content=="!C"){
             for(i=0;i<5;i++){
                 message.channel.send("<@"+secrets.userIds[0]+">")
@@ -37,8 +39,10 @@ bot.on("message", (message) => {
                 message.channel.send("<@"+secrets.userIds[1]+">")
             }
         }
-        else if(message.content.startsWith("!poll")){
 
+        //!poll
+        else if(message.content.startsWith("!poll")){
+            
             if(message.content.split('!poll')[1]==""){
                 message.channel.send("put what you want to poll after '!poll'. ex: '!poll is water wet?'")
             }
@@ -52,14 +56,18 @@ bot.on("message", (message) => {
                     sentEmbed.react("👍")
                     sentEmbed.react("👎")
                 })
-            }
-
-            
+            }            
         }
     }
 
+    //dadbot
     else if(message.content.includes("I'm")&& message.author.bot === false){
         dadMsg = message.content.split(`I'm`).pop();
         botChannel.send("<@"+message.author.id+"> Hi"+dadMsg+", I'm dad!");
+    }
+
+    //!source
+    else if(message.content.startsWith("!source")){
+        message.channel.send("https://github.com/upitroma/PingNuke")
     }
 });
