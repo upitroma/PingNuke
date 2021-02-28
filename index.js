@@ -24,7 +24,12 @@ bot.on("message", (message) => {
     if (message.content.startsWith(PREFIX)){
         if(message.content=="!C"){
             for(i=0;i<5;i++){
-                message.channel.send("<@300752301596082176>")
+                message.channel.send("<@"+secrets.userIds[0]+">")
+            }
+        }
+        else if(message.content=="!M"){
+            for(i=0;i<5;i++){
+                message.channel.send("<@"+secrets.userIds[1]+">")
             }
         }
     }
