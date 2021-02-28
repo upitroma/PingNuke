@@ -41,7 +41,7 @@ bot.on("message", (message) => {
         }
         else if(message.content=="!R"){
             for(i=0;i<5;i++){
-                message.channel.send("Happy birthday <@"+secrets.userIds[1]+">!")
+                message.channel.send("Happy birthday <@"+secrets.userIds[2]+">!")
             }
         }
 
