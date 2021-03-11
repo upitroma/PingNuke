@@ -40,6 +40,11 @@ bot.on("message", (message) => {
             }
         }
         
+        else if(message.content=="!U"){
+            for(i=0;i<5;i++){
+                message.channel.send("<@"+secrets.userIds[3]+">")
+	    }
+	}
 
         //!poll
         else if(message.content.startsWith("!poll")){
