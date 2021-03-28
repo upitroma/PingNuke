@@ -26,21 +26,21 @@ bot.once("ready", async () => {
 
 bot.on("message", (message) => {
     
-    if (message.content.startsWith(PREFIX)){
+    if (true){ //message.content.startsWith(PREFIX)){
 
         //ping spam
-        if(message.content=="!C"){
+        if(message.content.includes("!C")){
             for(i=0;i<5;i++){
                 message.channel.send("<@"+secrets.userIds[0]+">")
             }
         }
-        else if(message.content=="!M"){
+        if(message.content.includes("!M") || message.content.includes("!G")){
             for(i=0;i<5;i++){
                 message.channel.send("<@"+secrets.userIds[1]+">")
             }
         }
         
-        else if(message.content=="!U"){
+        if(message.content.includes("!A")){
             for(i=0;i<5;i++){
                 message.channel.send("<@"+secrets.userIds[3]+">")
 	    }
