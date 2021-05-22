@@ -28,6 +28,14 @@ bot.on("message", (message) => {
     
     if (true){ //message.content.startsWith(PREFIX)){
 
+	if(message.author.id==secrets.userIds[4]){
+		return
+	}
+	
+	if(message.author.id=="159985870458322944"){
+		message.channel.send("<@159985870458322944> Shut up you stupid bot!")
+	}
+
         //ping spam
         if(message.content.includes("!C")){
             for(i=0;i<5;i++){
@@ -45,6 +53,15 @@ bot.on("message", (message) => {
                 message.channel.send("<@"+secrets.userIds[3]+">")
 	    }
 	}
+	
+        if(message.content.includes("!J")){
+            for(i=0;i<5;i++){
+                message.channel.send("<@"+secrets.userIds[4]+">")
+	    }
+	}
+
+
+
 
         //!poll
         else if(message.content.startsWith("!poll")){
@@ -64,16 +81,17 @@ bot.on("message", (message) => {
                 })
             }            
         }
-    }
+    
 
-    //dadbot
-    else if(message.content.includes("I'm")&& message.author.bot === false){
-        dadMsg = message.content.split(`I'm`).pop();
-        botChannel.send("<@"+message.author.id+"> Hi"+dadMsg+", I'm dad!");
-    }
+    	//dadbot
+    	else if(message.content.includes("I'm")&& message.author.bot === false){
+        	dadMsg = message.content.split(`I'm`).pop();
+        	botChannel.send("<@"+message.author.id+"> Hi"+dadMsg+", I'm dad!");
+    	}
 
-    //!source
-    else if(message.content.startsWith("!source")){
-        message.channel.send("https://github.com/upitroma/PingNuke")
+    	//!source
+    	else if(message.content.startsWith("!source")){
+        	message.channel.send("https://github.com/upitroma/PingNuke")
+    	}
     }
 });
