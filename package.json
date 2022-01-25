@@ -1,0 +1,22 @@
+{
+  "name": "pingnuke",
+  "version": "1.0.0",
+  "description": "a bot for my friends' discord server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/upitroma/PingNuke.git"
+  },
+  "author": "upitroma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/upitroma/PingNuke/issues"
+  },
+  "homepage": "https://github.com/upitroma/PingNuke#readme",
+  "dependencies": {
+    "discord.js": "^13.6.0"
+  }
+}
