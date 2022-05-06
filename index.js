@@ -8,8 +8,8 @@ bot.login(secrets.TOKEN);
 
 console.log("starting bot...")
 
-const DISCORD_SERVER_ID = "732348936211136663"
-const PING_CHANNEL = "775031298371878942"  
+const DISCORD_SERVER_ID = "808470408851881984"
+const PING_CHANNEL = "809973213652189264"  
 
 bot.once("ready", async () => {
 
@@ -144,7 +144,3 @@ function pingSpam(){
         bot.channels.cache.get(PING_CHANNEL).send("10 minutes have passed. cease fire")
     }
 }
-
-
-
-  
